@@ -33,7 +33,7 @@ int main(int argc, char const *argv[])
             break;
 
         case 3:
-            Stack._SizeStack();
+            std::cout << Stack._SizeStack() << std::endl;
             break;
 
         case 4:

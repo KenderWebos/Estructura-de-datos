@@ -3,53 +3,56 @@
 #include <cstdlib>
 pila::pila()
 {
-    this->top = NULL;
+    top = NULL;
+    _size = 0;
 }
 
 pila::~pila()
 {
-    delete this->top;
+    Nodo *aux;
+    while (top)
+    {
+        aux = top;
+        delete top;
+        top = aux->next;
+    }
+    delete aux;
 }
 
 void pila::_PushStack(int valor)
 {
-    Nodo *NuevoNodo = new Nodo();
-    NuevoNodo = this->top;
+    Nodo *NuevoNodo = new Nodo;
+    NuevoNodo = top;
     NuevoNodo->data = valor;
-    NuevoNodo->next = this->top;
-    this->top = NuevoNodo;
+    NuevoNodo->next = top;
+    top = NuevoNodo;
+    _size++;
 }
 
 void pila::_PopStack()
 {
-    if (_IsEmpty())
+    if (this->_IsEmpty())
     {
         std::cout << "Pila vacia" << std::endl;
     }
     else
     {
-        std::cout << "el elemento a eliminar es: " << this->top->data << std::endl;
-        Nodo *aux = this->top;
-        aux = aux->next;
-        this->top = aux;
+        std::cout << "el elemento a eliminar es: " << top->data << std::endl;
+        Nodo *aux = top;
+        delete top;
+        top = aux->next;
         delete aux;
+        _size--;
     }
 }
 int pila::_SizeStack()
 {
-    int contador = 0;
-    Nodo *aux = this->top;
-    do
-    {
-        contador++;
-        aux = aux->next;
-    } while (aux == NULL);
-    return contador;
+    return _size;
 }
 
 void pila::_Display()
 {
-    Nodo *aux = this->top;
+    Nodo *aux = top;
     do
     {
         std::cout << aux->data << std::endl;
@@ -59,10 +62,10 @@ void pila::_Display()
 
 void pila::_PrintTop()
 {
-    std::cout << this->top->data << std::endl;
+    std::cout << top->data << std::endl;
 }
 
 bool pila::_IsEmpty()
 {
-    return this->top == NULL;
+    return _size == 0;
 }

@@ -10,6 +10,7 @@ class pila
 {
 private:
     Nodo *top;
+    int _size;
 public:
     pila();
     ~pila();
