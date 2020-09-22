@@ -4,8 +4,8 @@
 
 int main(int argc, char const *argv[])
 {
-    pila Stack;
-    int dato, opcion;
+    pila* Stack = new pila();
+    int dato, opcion;   
     char respuesta;
 
     do
@@ -25,27 +25,27 @@ int main(int argc, char const *argv[])
         case 1:
             std::cout << "ingrese un dato:";
             std::cin >> dato;
-            Stack._PushStack(dato);
+            Stack->_PushStack(dato);
             break;
 
         case 2:
-            Stack._PopStack();
+            Stack->_PopStack();
             break;
 
         case 3:
-            std::cout << Stack._SizeStack() << std::endl;
+            std::cout << Stack->_SizeStack() << std::endl;
             break;
 
         case 4:
-            Stack._Display();
+            Stack->_Display();
             break;
 
         case 5:
-            Stack._PrintTop();
+            Stack->_PrintTop();
             break;
 
         case 6:
-            Stack._IsEmpty();
+            std::cout << Stack->_IsEmpty() << std::endl;
             break;
 
         default:

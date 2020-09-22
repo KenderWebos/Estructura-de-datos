@@ -13,16 +13,16 @@ pila::~pila()
     while (top)
     {
         aux = top;
-        delete top;
+        free(top);
         top = aux->next;
     }
-    delete aux;
+    free(aux);
 }
 
 void pila::_PushStack(int valor)
 {
-    Nodo *NuevoNodo = new Nodo;
-    NuevoNodo = top;
+    Nodo *NuevoNodo;
+    NuevoNodo = (Nodo *)malloc(sizeof(Nodo));
     NuevoNodo->data = valor;
     NuevoNodo->next = top;
     top = NuevoNodo;
@@ -39,9 +39,9 @@ void pila::_PopStack()
     {
         std::cout << "el elemento a eliminar es: " << top->data << std::endl;
         Nodo *aux = top;
-        delete top;
+        free(top);
         top = aux->next;
-        delete aux;
+        free(aux);
         _size--;
     }
 }
@@ -53,11 +53,12 @@ int pila::_SizeStack()
 void pila::_Display()
 {
     Nodo *aux = top;
-    do
+    while (aux != NULL)
     {
         std::cout << aux->data << std::endl;
         aux = aux->next;
-    } while (aux == NULL);
+    }
+    
 }
 
 void pila::_PrintTop()
