@@ -5,11 +5,11 @@
 
 - [x] Queue
 - [x] Stack
-- [] Binary Search Tree
-- [] Binary Tree
-- [] Hash Table
-- [] Heap
-- [] Graph
+- [ ] Binary Search Tree
+- [ ] Binary Tree
+- [ ] Hash Table
+- [ ] Heap
+- [ ] Graph
 
 
 
