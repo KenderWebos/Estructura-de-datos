@@ -42,10 +42,10 @@ void Queue::Enqueue(int value)
 
 void Queue::Dequeue()
 {
-   Nodo *aux = _head;
-   aux = aux->previus;
+   Nodo *aux = _head->previus;
+   aux->next = NULL;
+   delete _head;
    _head = aux;
-   delete aux;
    _size--;
 }
 
@@ -72,11 +72,11 @@ void Queue::DisplayTail()
 void Queue::DisplayQueue()
 {
    Nodo *aux = _tail;
-   std::cout << "Inicio " << std::endl;
+   std::cout << "Cola ";
    while (aux != NULL)
    {
       std::cout << aux->data << " ";
       aux = aux->next;
    }
-   std::cout << " Final" << std::endl;
+   std::cout << " Frente" << std::endl;
 }
