@@ -3,6 +3,14 @@
   <h1>Estructura de Datos en C++</h1>
 </p>
 
+- [x] Queue
+- [x] Stack\
+- [x] Binary Search Tree
+- [x] Binary Tree
+- [x] Hash Table
+- [x] Heap
+- [x] Graph
+
 
 
 
