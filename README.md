@@ -4,12 +4,12 @@
 </p>
 
 - [x] Queue
-- [x] Stack\
-- [x] Binary Search Tree
-- [x] Binary Tree
-- [x] Hash Table
-- [x] Heap
-- [x] Graph
+- [x] Stack
+- [] Binary Search Tree
+- [] Binary Tree
+- [] Hash Table
+- [] Heap
+- [] Graph
 
 
 
